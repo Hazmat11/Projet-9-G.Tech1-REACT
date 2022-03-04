@@ -3,7 +3,15 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 function NavBar() {
     return <Navbar bg="light" expand="lg">
         <Container>
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Brand href="#home">
+                <img
+                    src="/logo.svg"
+                    width="50"
+                    height="50"
+                    className="d-inline-block align-top"
+                    alt="Logo"
+                />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
