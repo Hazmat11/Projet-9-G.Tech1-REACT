@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "baskets",
+  "info": {
+    "singularName": "basket",
+    "pluralName": "baskets",
+    "displayName": "Basket"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
