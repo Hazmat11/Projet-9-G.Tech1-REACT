@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
-import { getArticles } from '../api/Articles';
+import { Card, Button, Spinner } from 'react-bootstrap';
+import { getArticles } from '../../api/Articles';
+import { BsCartPlusFill } from 'react-icons/bs';
 import './ArticlesCards.css';
 
 class ArticlesCards extends Component {
@@ -19,6 +20,10 @@ class ArticlesCards extends Component {
     }
 
     render() {
+        if(this.props.loading) {
+            return <Spinner animation="grow" />
+        }
+
         return <div>
         {this.state.articles.data && this.state.articles.data.map((article,key)=><Card style={{ width: '18rem' }}>
             <Card.Img variant="top" className='ArticlesImages' src={"http://localhost:1337"+article.attributes.visuals.data.attributes.url} />
@@ -26,7 +31,7 @@ class ArticlesCards extends Component {
                     <Card.Title>{article.attributes.name}</Card.Title>
                     <Card.Text>{article.attributes.description}</Card.Text>
                     <Card.Text><strong>{article.attributes.price} €</strong></Card.Text>
-                    <Button variant="primary">Buy</Button>
+                    <Button variant="primary"> <BsCartPlusFill /> </Button>
                 </Card.Body>
             </Card >
             )
