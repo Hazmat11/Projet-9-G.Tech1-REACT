@@ -4,7 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "articles",
+    "displayName": "article",
     "description": ""
   },
   "options": {
@@ -12,10 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "visuals": {
       "type": "media",
       "multiple": false,
@@ -27,13 +23,14 @@
         "audios"
       ]
     },
+    "title": {
+      "type": "string"
+    },
     "description": {
-      "type": "richtext",
-      "required": true
+      "type": "richtext"
     },
     "price": {
-      "type": "decimal",
-      "required": true
+      "type": "decimal"
     },
     "categories": {
       "type": "relation",

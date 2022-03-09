@@ -1,5 +1,27 @@
+body{
+  background-image: url(http://localhost:1337/uploads/2081930_daa8aa1435.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+h1{
+  background-color: antiquewhite;
+  max-width: fit-content;
+  text-align: center;
+  margin:0 auto;
+}
+
+h2{
+  background-color: antiquewhite;
+  max-width: fit-content;
+  text-align: center;
+  margin:0 auto;
+}
+
 .App {
   text-align: center;
+  padding: 0px;
 }
 
 .App-logo {
@@ -35,4 +57,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.card-body{
+  padding-bottom: 100px;
 }
