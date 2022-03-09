@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Row, Col, Container } from 'react-bootstrap';
 import MyNavBar from './components/MyNavbar';
