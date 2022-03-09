@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import App from './App.js';
+import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter,
   Route,
   Routes
-} from 'react-router-dom';
+} from 'react-router-dom'
 
 const Root = () => {
   return (

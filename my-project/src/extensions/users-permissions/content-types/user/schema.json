@@ -63,10 +63,15 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "baskets": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::basket.basket"
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
