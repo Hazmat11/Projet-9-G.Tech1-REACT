@@ -1,31 +1,29 @@
 import { Component } from "react";
+import { Button, Modal } from "react-bootstrap";
 
 class BasketModal extends Component {
+
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
-            article: []
+            articles: []
         }
     }
 
-    async componentDidMount() {
-        const articles = await getArticles()
+    componentDidMount() {
         this.setState({
-            articles: articles
+            articles: JSON.parse(localStorage.getItem('article'))
         })
     }
 
     render() {
-        if (this.props.loading) {
-            return <Spinner animation="grow" />
-        }
-
         return <div>
             <Modal
-                {...props}
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
+                show={this.props.show}
+                onHide={this.props.onHide}
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
@@ -35,13 +33,13 @@ class BasketModal extends Component {
                 <Modal.Body>
                     <h4>Centered Modal</h4>
                     <p>
-                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                        dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                        consectetur ac, vestibulum at eros.
+                        {
+                            this.state.articles.length>0 && this.state.articles.map((u, i) => u.name)
+                        }
                     </p>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={props.onHide}>Close</Button>
+                    <Button onClick={this.props.onHide}>Close</Button>
                 </Modal.Footer>
             </Modal>
         </div>

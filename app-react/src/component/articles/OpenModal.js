@@ -1,17 +1,21 @@
-import { ArticlesModal } from "./ArticlesPage.js";
+import { Button } from "react-bootstrap";
+import React from 'react';
+import ArticlesModal from "./ArticlesPage";
 
-function OpenM() {
+
+function OpenM(props) {
     const [modalShow, setModalShow] = React.useState(false);
 
     return (
         <>
             <Button variant="primary" onClick={() => setModalShow(true)}>
-                Launch vertically centered modal
+                <strong>MORE</strong>
             </Button>
 
             <ArticlesModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
+                article={props.article}
             />
         </>
     );

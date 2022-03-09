@@ -1,4 +1,7 @@
-import { BasketModal } from "./BasketModal.js";
+import { Button } from "react-bootstrap";
+import { BsCartFill } from "react-icons/bs";
+import React from 'react';
+import BasketModal from "./BasketModal";
 
 function OpenMB() {
     const [modalShow, setModalShow] = React.useState(false);
@@ -6,7 +9,7 @@ function OpenMB() {
     return (
         <>
             <Button variant="primary" onClick={() => setModalShow(true)}>
-                Launch vertically centered modal
+                <BsCartFill />
             </Button>
 
             <BasketModal

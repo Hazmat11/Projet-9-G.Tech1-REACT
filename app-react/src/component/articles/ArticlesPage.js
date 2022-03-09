@@ -1,47 +1,35 @@
 import { Component } from "react";
+import { Button, Modal } from "react-bootstrap";
+import { BsCartPlusFill } from "react-icons/bs";
 
 class ArticlesModal extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            article: []
-        }
     }
-
-    async componentDidMount() {
-        const articles = await getArticles()
-        this.setState({
-            articles: articles
-        })
-    }
-
     render() {
-        if (this.props.loading) {
-            return <Spinner animation="grow" />
-        }
-
         return <div>
             <Modal
-                {...props}
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
+                show={this.props.show} 
+                onHide={this.props.onHide}
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        {this.props.name}
+                        {this.props.article.attributes.title}
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <h4>Centered Modal</h4>
+                    <img src={"http://localhost:1337"+this.props.article.attributes.visuals.data.attributes.url} />
                     <p>
-                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                        dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                        consectetur ac, vestibulum at eros.
+                        {this.props.article.attributes.descriptionLong}
                     </p>
+                    <strong>{this.props.article.attributes.price} €</strong>
+                    <Button variant="primary"> <BsCartPlusFill /> </Button>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={props.onHide}>Close</Button>
+                    <Button onClick={this.props.onHide}>Close</Button>
                 </Modal.Footer>
             </Modal>
         </div>

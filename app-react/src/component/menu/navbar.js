@@ -1,12 +1,9 @@
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import React, { Component } from 'react';
-import { BsCartFill } from "react-icons/bs";
 import "./NavBar.css";
+import OpenMB from '../basket/OpenMB';
 
 class ArticlesCards extends Component {
-
-    async componentDidMount() {
-    }
 
     render() {
         return <div>
@@ -34,7 +31,7 @@ class ArticlesCards extends Component {
                                 <NavDropdown.Item href="#action/3.5">Reptiles</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.6">Shark & Rays</NavDropdown.Item>
                             </NavDropdown>
-                            <BsCartFill />
+                            <OpenMB />
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
