@@ -1,7 +1,7 @@
 import './App.css';
-import { Row, Col, Container } from 'react-bootstrap';
-import MyNavBar from './components/MyNavbar';
-import ArticlesCards from './components/ArticlesCards';
+import { Container } from 'react-bootstrap';
+import MyNavBar from './component/menu/Navbar.js';
+import ArticlesCards from './component/articles/ArticlesCards.js';
 
 function App() {
   return (

@@ -1,5 +1,7 @@
 import { Component } from "react";
 import { Button, Modal } from "react-bootstrap";
+import { BsCheckCircle } from "react-icons/bs";
+import { newOrder } from "../../api/Order";
 
 class BasketModal extends Component {
 
@@ -12,7 +14,7 @@ class BasketModal extends Component {
 
     componentDidMount() {
         this.setState({
-            articles: JSON.parse(localStorage.getItem('article'))
+            articles: JSON.parse(localStorage.getItem('cart'))
         })
     }
 
@@ -27,19 +29,19 @@ class BasketModal extends Component {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        <strong>BASKET</strong>
+                        <strong>ORDER</strong>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <h4>Centered Modal</h4>
-                    <p>
-                        {
-                            this.state.articles.length>0 && this.state.articles.map((u, i) => u.name)
-                        }
-                    </p>
+                    <h4>Current Order</h4>
+                    {this.state.articles.map((this.state.articles, i) =>
+                    <p>{this.state.articles.title}</p>
+                    )
+                     }
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={this.props.onHide}>Close</Button>
+                    <h4><strong>Total:</strong></h4>
+                    <Button onClick={newOrder}> <BsCheckCircle /> </Button>
                 </Modal.Footer>
             </Modal>
         </div>

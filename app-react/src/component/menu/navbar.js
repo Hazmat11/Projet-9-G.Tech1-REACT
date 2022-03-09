@@ -2,8 +2,9 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import React, { Component } from 'react';
 import "./NavBar.css";
 import OpenMB from '../basket/OpenMB';
+import BasketModal from '../basket/BasketModal';
 
-class ArticlesCards extends Component {
+class MyNavBar extends Component {
 
     render() {
         return <div>
@@ -22,7 +23,6 @@ class ArticlesCards extends Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Link</Nav.Link>
                             <NavDropdown title="Categories" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Birds</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">Mammals</NavDropdown.Item>
@@ -40,4 +40,4 @@ class ArticlesCards extends Component {
     }
 }
 
-export default ArticlesCards;
+export default MyNavBar;

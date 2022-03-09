@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * basket router.
+ * order router.
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::basket.basket');
+module.exports = createCoreRouter('api::order.order');

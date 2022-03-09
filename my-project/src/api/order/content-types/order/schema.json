@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "baskets",
+  "collectionName": "orders",
   "info": {
-    "singularName": "basket",
-    "pluralName": "baskets",
-    "displayName": "Basket"
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
   },
   "options": {
     "draftAndPublish": true
@@ -15,11 +15,6 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article"
-    },
-    "users_permissions_user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
     }
   }
 }
