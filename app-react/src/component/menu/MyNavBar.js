@@ -2,8 +2,25 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import React, { Component } from 'react';
 import "./MyNavBar.css";
 import OpenMB from '../basket/OpenMB';
+import { getCategory } from '../../api/Articles';
+
 
 class MyNavBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            categories: [],
+            cart: []
+        }
+    }
+
+    async componentDidMount() {
+        const categories = await getCategory()
+        this.setState({
+            categories: categories
+        })
+    }
+
 
     render() {
         return <div>
@@ -23,7 +40,10 @@ class MyNavBar extends Component {
                         <Nav className="me-auto">
                             <Nav.Link href="#home">Home</Nav.Link>
                             <NavDropdown title="Categories" id="basic-nav-dropdown">
-  
+                                {this.state.categories.data && this.state.categories.data.map((category, key) =>
+                                    <NavDropdown.Item href="#action/3.1">{this.state.category.attributes.name}</NavDropdown.Item>
+                                )
+                                }
                             </NavDropdown>
                             <OpenMB />
                         </Nav>
