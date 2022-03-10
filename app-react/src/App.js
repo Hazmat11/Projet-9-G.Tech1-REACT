@@ -1,6 +1,6 @@
 import './App.css';
 import { Container } from 'react-bootstrap';
-import MyNavBar from './component/menu/Navbar.js';
+import MyNavBar from './component/menu/MyNavBar.js';
 import ArticlesCards from './component/articles/ArticlesCards.js';
 
 function App() {

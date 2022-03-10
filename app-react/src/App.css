@@ -1,5 +1,5 @@
 body{
-  background-image: url(http://localhost:1337/uploads/photo_1516528387618_afa90b13e000_089ad3dd47.jfif?updated_at=2022-03-09T15:23:44.912Z);
+  background-image: url(http://localhost:1337/uploads/2081930_1_a1a4d23110.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -61,4 +61,9 @@ h2{
 
 .card-body{
   padding-bottom: 100px;
+}
+
+img{
+  max-width: 500px;
+  max-height: 500px;
 }

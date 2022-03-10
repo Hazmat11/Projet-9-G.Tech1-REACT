@@ -1,9 +1,26 @@
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import React, { Component } from 'react';
-import "./NavBar.css";
+import "./MyNavBar.css";
 import OpenMB from '../basket/OpenMB';
+import { getCategory } from '../../api/Articles';
+
 
 class MyNavBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            categories: [],
+            cart: []
+        }
+    }
+
+    async componentDidMount() {
+        const categories = await getCategory()
+        this.setState({
+            categories: categories
+        })
+    }
+
 
     render() {
         return <div>
@@ -23,12 +40,10 @@ class MyNavBar extends Component {
                         <Nav className="me-auto">
                             <Nav.Link href="#home">Home</Nav.Link>
                             <NavDropdown title="Categories" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Birds</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Mammals</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Amphibians</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.4">Crustaceans</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.5">Reptiles</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.6">Shark & Rays</NavDropdown.Item>
+                                {this.state.categories.data && this.state.categories.data.map((category, key) =>
+                                    <NavDropdown.Item href="#action/3.1">{this.state.category.attributes.name}</NavDropdown.Item>
+                                )
+                                }
                             </NavDropdown>
                             <OpenMB />
                         </Nav>
