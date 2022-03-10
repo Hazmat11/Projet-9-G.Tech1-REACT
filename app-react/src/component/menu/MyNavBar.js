@@ -1,8 +1,10 @@
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import React, { Component } from 'react';
-import "./NavBar.css";
+import "./MyNavBar.css";
+import OpenMB from '../basket/OpenMB';
 
 class MyNavBar extends Component {
+
     render() {
         return <div>
             <Navbar className="Navbar" expand="lg">
@@ -21,14 +23,9 @@ class MyNavBar extends Component {
                         <Nav className="me-auto">
                             <Nav.Link href="#home">Home</Nav.Link>
                             <NavDropdown title="Categories" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Birds</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Mammals</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Amphibians</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.4">Crustaceans</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.5">Reptiles</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.6">Shark & Rays</NavDropdown.Item>
+  
                             </NavDropdown>
-
+                            <OpenMB />
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

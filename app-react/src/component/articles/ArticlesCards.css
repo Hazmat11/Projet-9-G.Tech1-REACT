@@ -1,4 +1,5 @@
 class ArticlesImages {
     width: 18rem;
     height: auto;
+    max-height: 500px;
 }
