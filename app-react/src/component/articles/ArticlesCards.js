@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Button, Row, Col } from 'react-bootstrap';
+import { Card, Button, Row, Col, Toast } from 'react-bootstrap';
 import { getArticles } from '../../api/Articles';
 import { BsCartPlusFill } from 'react-icons/bs';
 import './ArticlesCards.css';
@@ -9,7 +9,8 @@ class ArticlesCards extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            articles: []
+            articles: [],
+            cart: []
         }
     }
 
@@ -18,6 +19,24 @@ class ArticlesCards extends Component {
         this.setState({
             articles: articles
         })
+    }
+
+    addArticle = (article) => {
+        this.setState({
+            cart: [
+                ...this.state.cart,
+                article
+            ]
+        }, () => { localStorage.setItem('cart', JSON.stringify(this.state.cart)) })
+        console.log(this.state.cart)
+
+        return (<Toast>
+            <Toast.Header>
+                <img src="http://localhost:1337/uploads/Exotic_Taste_54b7357042.png?updated_at=2022-03-04T09:02:28.976Z" className="rounded me-2" alt="" />
+                <strong className="me-auto">CART</strong>
+            </Toast.Header>
+            <Toast.Body>Your order has been update !</Toast.Body>
+        </Toast>)
     }
 
     render() {
@@ -30,7 +49,7 @@ class ArticlesCards extends Component {
                             <Card.Title>{article.attributes.title}</Card.Title>
                             <Card.Text>{article.attributes.description}</Card.Text>
                             <Card.Text><strong>{article.attributes.price} €</strong></Card.Text>
-                            <Button variant="primary" onClick={localStorage.setItem('article', JSON.stringify(this.state.articles))}> <BsCartPlusFill /> </Button>
+                            <Button variant="primary" onClick={() => { this.addArticle(article) }}> <BsCartPlusFill /> </Button>
                             <OpenM article={article} />
                         </Card.Body>
                     </Card >

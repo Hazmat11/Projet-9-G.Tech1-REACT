@@ -2,6 +2,7 @@ import { Component } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { BsCheckCircle } from "react-icons/bs";
 import { newOrder } from "../../api/Order";
+import { ShowCart } from './ShowBasket.js'
 
 class BasketModal extends Component {
 
@@ -34,10 +35,7 @@ class BasketModal extends Component {
                 </Modal.Header>
                 <Modal.Body>
                     <h4>Current Order</h4>
-                    {this.state.articles.map((this.state.articles, i) =>
-                    <p>{this.state.articles.title}</p>
-                    )
-                     }
+                    <ShowCart />
                 </Modal.Body>
                 <Modal.Footer>
                     <h4><strong>Total:</strong></h4>

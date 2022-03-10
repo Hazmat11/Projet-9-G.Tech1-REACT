@@ -2,7 +2,6 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import React, { Component } from 'react';
 import "./NavBar.css";
 import OpenMB from '../basket/OpenMB';
-import BasketModal from '../basket/BasketModal';
 
 class MyNavBar extends Component {
 

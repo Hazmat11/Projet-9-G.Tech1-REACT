@@ -12,7 +12,7 @@ class ArticlesModal extends Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                show={this.props.show} 
+                show={this.props.show}
                 onHide={this.props.onHide}
             >
                 <Modal.Header closeButton>
@@ -21,15 +21,14 @@ class ArticlesModal extends Component {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <img src={"http://localhost:1337"+this.props.article.attributes.visuals.data.attributes.url} />
+                    <img src={"http://localhost:1337" + this.props.article.attributes.visuals.data.attributes.url} />
                     <p>
                         {this.props.article.attributes.descriptionLong}
                     </p>
                     <strong>{this.props.article.attributes.price} €</strong>
-                    <Button variant="primary"> <BsCartPlusFill /> </Button>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={this.props.onHide}>Close</Button>
+                    <Button variant="primary" onClick={() => { localStorage.setItem('article', JSON.stringify(this.state.articles)) }}> <BsCartPlusFill /> </Button>
                 </Modal.Footer>
             </Modal>
         </div>
